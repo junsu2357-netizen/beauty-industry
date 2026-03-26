@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-뷰티 산업 분석 보고서</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Apple SD Gothic Neo', '맑은 고딕', sans-serif; background: #f5f5f5; color: #222; font-size: 14px; line-height: 1.7; }
+
+  header { background: #1a1a2e; color: #fff; padding: 32px 40px; }
+  header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  header p { font-size: 12px; color: #aaa; }
+
+  nav { display: flex; background: #16213e; overflow-x: auto; }
+  nav a { color: #ccc; text-decoration: none; padding: 14px 22px; font-size: 13px; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  nav a:hover, nav a.active { color: #fff; border-bottom-color: #e94560; background: rgba(255,255,255,0.05); }
+
+  .section { display: none; max-width: 900px; margin: 30px auto; padding: 0 20px 60px; }
+  .section.active { display: block; }
+
+  .chapter-title { font-size: 18px; font-weight: 700; color: #1a1a2e; border-left: 4px solid #e94560; padding-left: 12px; margin-bottom: 24px; margin-top: 32px; }
+  .chapter-title:first-child { margin-top: 0; }
+
+  .card { background: #fff; border-radius: 8px; padding: 22px 26px; margin-bottom: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .card h3 { font-size: 14px; font-weight: 700; color: #e94560; margin-bottom: 10px; }
+  .card h4 { font-size: 13px; font-weight: 700; color: #333; margin: 14px 0 6px; }
+  .card p { color: #444; margin-bottom: 8px; }
+  .card ul { padding-left: 18px; color: #444; }
+  .card ul li { margin-bottom: 4px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+
+  .stat-box { background: #fff; border-radius: 8px; padding: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); text-align: center; }
+  .stat-box .num { font-size: 26px; font-weight: 700; color: #e94560; }
+  .stat-box .label { font-size: 12px; color: #666; margin-top: 4px; }
+
+  .tag { display: inline-block; background: #eef; color: #448; font-size: 11px; padding: 2px 8px; border-radius: 20px; margin: 2px; }
+  .tag.red { background: #fee; color: #944; }
+  .tag.green { background: #efe; color: #494; }
+
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: #ddd; }
+  .timeline-item { position: relative; margin-bottom: 18px; }
+  .timeline-item::before { content: ''; position: absolute; left: -21px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #e94560; border: 2px solid #fff; box-shadow: 0 0 0 2px #e94560; }
+  .timeline-item .period { font-size: 11px; font-weight: 700; color: #e94560; margin-bottom: 4px; }
+  .timeline-item .content { font-size: 13px; color: #444; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table th { background: #1a1a2e; color: #fff; padding: 10px 12px; text-align: left; }
+  table td { padding: 9px 12px; border-bottom: 1px solid #eee; color: #444; }
+  table tr:hover td { background: #fafafa; }
+
+  .source { font-size: 11px; color: #999; margin-top: 10px; font-style: italic; }
+
+  .issue-block { background: #fff; border-radius: 8px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .issue-block .issue-title { background: #1a1a2e; color: #fff; padding: 12px 18px; font-size: 13px; font-weight: 700; }
+  .issue-block .issue-body { padding: 16px 18px; }
+  .issue-block .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 3px; margin-right: 6px; }
+  .badge.orange { background: #fff3e0; color: #e65100; }
+  .badge.blue { background: #e3f2fd; color: #1565c0; }
+
+  @media (max-width: 600px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    nav a { padding: 12px 14px; font-size: 12px; }
+    header { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>K-뷰티 산업 분석 보고서</h1>
+  <p>신사업 진출 검토용 · 출처: samilpwc_k-beauty-guidebook2025.pdf (삼일PwC, 2025.11)</p>
+</header>
+
+<nav>
+  <a href="#" class="active" onclick="showSection('sec1', this)">① 산업 현황</a>
+  <a href="#" onclick="showSection('sec2', this)">② Funding · M&A · IPO</a>
+  <a href="#" onclick="showSection('sec3', this)">③ 회계·세무 이슈</a>
+</nav>
+
+<!-- ==================== SECTION 1 ==================== -->
+<div id="sec1" class="section active">
+
+  <div class="chapter-title">K-뷰티 산업 성장 단계</div>
+  <div class="card">
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="period">1단계 · 2000년대~2010년대 초반</div>
+        <div class="content"><strong>원브랜드숍 전성기</strong> — 더페이스샵·이니스프리·에뛰드하우스 등 저가 브랜드가 유통 거점 확장. 경쟁력은 '저렴하고 신선한 브랜드 경험'.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">2단계 · 2014~2016년</div>
+        <div class="content"><strong>중국 모멘텀 & 따이공(리셀러) 효과</strong> — 면세점 채널 급성장, 월평균 60만 명 이상 중국인 관광객 유입. 사드·한한령으로 구조적 취약성 노출.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="period">3단계 · 2020년대~</div>
+        <div class="content"><strong>글로벌 카테고리 확산</strong> — 코로나 이후 온라인 채널 급부상, MZ세대 주요 소비층. 미국·일본·유럽·중동 등 비중국권 고성장. K-뷰티는 글로벌 다변화 구조 확보.</div>
+      </div>
+    </div>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 메리츠증권 "K-뷰티의 힘"</p>
+  </div>
+
+  <div class="chapter-title">국내 화장품 시장</div>
+  <div class="grid-3">
+    <div class="stat-box">
+      <div class="num">$12.2B</div>
+      <div class="label">2023년 국내 시장 규모</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">3.7%</div>
+      <div class="label">2024~30년 국내 CAGR 전망</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">9.3%</div>
+      <div class="label">2024~30년 글로벌 CAGR 전망</div>
+    </div>
+  </div>
+  <div class="card">
+    <p>국내 시장은 성숙도가 높아 글로벌 대비 성장률이 낮음. 코로나 기간 외부활동 감소 및 외국인 구매 감소가 성장률에 영향.</p>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · Euromonitor International</p>
+  </div>
+
+  <div class="chapter-title">글로벌 주요 3대 시장</div>
+  <div class="grid-3">
+    <div class="card">
+      <h3>🇺🇸 미국</h3>
+      <p><strong>$103.4B</strong> (2023년, CAGR 6.4%)</p>
+      <p>2025년 3Q 누적 수출 <strong>$1.67B (+18.7% YoY)</strong> — 한국의 최대 수출국 1위 등극. 색조 수입 점유율 21.7%로 1위.</p>
+      <p style="margin-top:8px">중심 소비층: MZ세대, 더마코스메틱·매스 브랜드 수요 강세, 옴니채널 전환 중.</p>
+    </div>
+    <div class="card">
+      <h3>🇨🇳 중국</h3>
+      <p><strong>$69.8B</strong> (2023년, CAGR 3.3%)</p>
+      <p>로컬 브랜드 성장으로 한국 화장품 수입 역성장. 한국계 시장점유율 <strong>–26.1%</strong> 감소.</p>
+      <p style="margin-top:8px">수입은 중고가 프리미엄, 로컬은 가성비로 양극화. Z세대 애국소비 트렌드.</p>
+    </div>
+    <div class="card">
+      <h3>🇯🇵 일본</h3>
+      <p><strong>$26.5B</strong> (2023년, CAGR –1.6%)</p>
+      <p>한국은 화장품 수입국 1위 (프랑스 제침). 중저가 색조 중심으로 점유.</p>
+      <p style="margin-top:8px">오프라인 드럭스토어 중심 유통, 전자상거래 비중 낮음. 고령화로 고가 상품 비중 증가.</p>
+    </div>
+  </div>
+  <p class="source" style="margin-top:-10px;padding:0 4px">출처: samilpwc_k-beauty-guidebook2025.pdf · Euromonitor International</p>
+
+  <div class="chapter-title">한국 화장품 수출 현황</div>
+  <div class="grid-3">
+    <div class="stat-box">
+      <div class="num">$10.2B</div>
+      <div class="label">2024년 역대 최고 수출액</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">+14.9%</div>
+      <div class="label">2025년 3Q 누적 YoY 성장률</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">70%↑</div>
+      <div class="label">화장품 생산액 대비 수출액 비율</div>
+    </div>
+  </div>
+  <div class="card">
+    <h4>상위 수출국 순위 변화 (2022 → 2025 3Q)</h4>
+    <table>
+      <thead><tr><th>순위</th><th>2022년</th><th>2023년</th><th>2024년</th><th>2025년 3Q</th></tr></thead>
+      <tbody>
+        <tr><td>1위</td><td>중국 $3.61B</td><td>중국 $2.78B</td><td>중국 $2.50B</td><td><strong>미국 $1.67B</strong></td></tr>
+        <tr><td>2위</td><td>미국 $0.84B</td><td>미국 $1.21B</td><td>미국 $1.91B</td><td>중국 $1.58B</td></tr>
+        <tr><td>3위</td><td>일본 $0.75B</td><td>일본 $0.80B</td><td>일본 $1.04B</td><td>일본 $0.82B</td></tr>
+      </tbody>
+    </table>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 관세청</p>
+  </div>
+
+  <div class="chapter-title">K-뷰티 밸류체인 구조</div>
+  <div class="card">
+    <p style="margin-bottom:14px">화장품 밸류체인: <strong>원료 → 부자재 → ODM/OEM → 브랜드 → 플랫폼(유통)</strong></p>
+    <table>
+      <thead><tr><th>구분</th><th>매출 성장률 ('16~'24)</th><th>진입장벽</th><th>대표 기업</th></tr></thead>
+      <tbody>
+        <tr><td>부자재</td><td><strong>14.5%</strong></td><td>높음</td><td>연우, 펌텍코리아, 승일</td></tr>
+        <tr><td>ODM/OEM</td><td><strong>13.0%</strong></td><td>매우 높음</td><td>코스맥스, 한국콜마, 코스메카코리아</td></tr>
+        <tr><td>원료</td><td>4.9%</td><td>낮음</td><td>현대바이오랜드, 미원상사, 한농화성</td></tr>
+        <tr><td>대형 브랜드</td><td>–0.7%</td><td>낮음 (중저가)</td><td>아모레퍼시픽, LG생활건강, 애경산업</td></tr>
+        <tr><td>플랫폼</td><td>고성장</td><td>중간</td><td>CJ올리브영, 실리콘투</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; color:#444; font-size:13px">※ 인디 브랜드 확산으로 ODM 비중 유지. 원료는 수입 비중 40%↑(핵심 원료는 프랑스·일본 과점).</p>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 삼일PwC경영연구원</p>
+  </div>
+
+  <div class="chapter-title">주요 판매채널 트렌드</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>온라인 (이커머스)</h3>
+      <p>국내 전체 구매채널의 <strong>36.7%</strong> (2024년). 모바일 쇼핑이 온라인의 <strong>80.2%</strong>. 쿠팡·네이버 플랫폼이 주도.</p>
+      <p style="margin-top:8px">아마존이 뷰티 카테고리에 지속 투자 → 이커머스를 화장품 발견 채널로 포지셔닝.</p>
+    </div>
+    <div class="card">
+      <h3>오프라인 H&B 스토어</h3>
+      <p>중저가 화장품 수요 대부분 흡수. 랄라블라·롭스 폐점으로 <strong>CJ올리브영</strong>이 압도적 우위.</p>
+      <p style="margin-top:8px">올리브영 오프라인 매장 <strong>1,371개</strong> (2024년 12월). 온·오프 옴니채널 전략 구축.</p>
+    </div>
+  </div>
+  <p class="source" style="padding:0 4px; margin-top:-10px">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+
+</div>
+
+<!-- ==================== SECTION 2 ==================== -->
+<div id="sec2" class="section">
+
+  <div class="chapter-title">K-뷰티 Funding 유형</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>벤처캐피탈(VC) / 엔젤 투자</h3>
+      <p>뷰티 스타트업은 무형자산 중심이라 제도권 금융 차입이 어려움 → VC·엔젤투자가 일반적.</p>
+      <p style="margin-top:8px">2025년 4월, 중소벤처기업부 + 코스맥스·한국콜마 <strong>400억 원 K-뷰티 펀드</strong> 결성. 향후 VC 투자 확대 예상.</p>
+      <h4>주요 투자 사례</h4>
+      <ul>
+        <li>R사 (식물소재 원료) — 코오롱인베스트먼트 외 (2025.9)</li>
+        <li>J사 (1세대 뷰티 아티스트 브랜드) — CLSA캐피탈, 기업가치 약 3,000억 원 (2025.7)</li>
+        <li>B사 (뷰티 구독 플랫폼) — 굿워터·알토스벤처스, CB 투자 (2025.7)</li>
+        <li>M사 (뷰티 디바이스) — 컴퍼니케이·한국투자파트너스, RCPS (2024.4)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>크라우드 펀딩</h3>
+      <p>소규모 스타트업의 자금조달 수단. 대출형·증권형·후원형·기부형으로 구분.</p>
+      <h4>국내 플랫폼</h4>
+      <ul>
+        <li>와디즈, 텀블벅, 크라우디</li>
+      </ul>
+      <h4>투자 한도 (일반투자자)</h4>
+      <ul>
+        <li>동일기업 당 최대 500만 원</li>
+        <li>연간 총 1,000만 원</li>
+      </ul>
+      <p style="margin-top:8px; color:#666; font-size:12px">2016년 증권형 크라우드 펀딩 법제화, 2018년 한도 확대.</p>
+    </div>
+  </div>
+  <p class="source" style="padding:0 4px; margin-top:-10px">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+
+  <div class="chapter-title">K-뷰티 M&A 특징 및 주요 사례</div>
+  <div class="card">
+    <h3>M&A 주요 특징</h3>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4>① 고 Valuation 경향</h4>
+        <p>뷰티 기업의 가파른 Life Cycle → 과거 실적 기반 EV/EBITDA로는 Multiple이 합리적이지 않아 보임. 당해 연도 가파른 성장 추세 반영.</p>
+      </div>
+      <div>
+        <h4>② 미들급 브랜드 선호</h4>
+        <p>매출 수백억 원 내외의 성장 여력 있는 브랜드가 선호 대상. 너무 작으면 미검증, 너무 크면 성장성 불확실.</p>
+      </div>
+    </div>
+    <p style="color:#e94560; font-size:13px; margin-top:4px">→ 매도인은 "성장하고 있는 시점"에 전략적으로 M&A 시장 접근 필요.</p>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+  </div>
+
+  <div class="card">
+    <h3>주요 M&A 사례</h3>
+    <table style="margin-top:10px">
+      <thead><tr><th>인수자</th><th>피인수 기업</th><th>금액</th><th>시기</th><th>포인트</th></tr></thead>
+      <tbody>
+        <tr><td>아모레퍼시픽</td><td>코스알엑스 (95%)</td><td>약 9,351억 원</td><td>2021~2023</td><td>북미 온라인 채널 강세, 해외매출 90%↑</td></tr>
+        <tr><td>구다이글로벌</td><td>서린컴퍼니 (라운드랩) 100%</td><td>약 6,000억 원</td><td>2025.7</td><td>인수 후 연 매출 약 1.5조 원 규모 전망</td></tr>
+        <tr><td>LG생활건강</td><td>비바웨이브 (힌스) 75%</td><td>425억 원</td><td>2023.9</td><td>일본 MZ세대 색조 인기, 해외매출 50%</td></tr>
+        <tr><td>구다이글로벌</td><td>티르티르</td><td>1,500억 원</td><td>2024.8</td><td>일본 1,719억 원 매출, 북미 확장 시너지</td></tr>
+        <tr><td>신세계인터내셔날</td><td>어뮤즈 100%</td><td>713억 원</td><td>2024.10</td><td>젊고 트렌디한 브랜드 포트폴리오 추가</td></tr>
+        <tr><td>KKR</td><td>삼화 (화장품 용기) 100%</td><td>7,330억 원</td><td>2025.9</td><td>글로벌 PE의 K-뷰티 부자재 투자</td></tr>
+        <tr><td>태광그룹</td><td>애경산업 63%</td><td>4,700억 원</td><td>2025~2026</td><td>K-뷰티 진출 통한 포트폴리오 다변화</td></tr>
+        <tr><td>유니레버</td><td>카버코리아 (AHC) 100%</td><td>약 3조 원</td><td>2017</td><td>역대 최대 규모 글로벌 기업의 K-뷰티 인수</td></tr>
+        <tr><td>에스티로더</td><td>해브앤비 (닥터자르트) 100%</td><td>미공개</td><td>2019</td><td>더마코스메틱 포트폴리오 확장</td></tr>
+        <tr><td>로레알</td><td>스타일난다 100%</td><td>약 6,000억 원</td><td>2018</td><td>3CE 색조 및 소셜미디어 마케팅 역량 인수</td></tr>
+      </tbody>
+    </table>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+  </div>
+
+  <div class="chapter-title">IPO를 통한 기업공개</div>
+  <div class="card">
+    <h3>주요 K-뷰티 IPO 사례</h3>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4>에이피알 (코스피, 2024.2)</h4>
+        <ul>
+          <li>공모가 25만 원, 기관 경쟁률 663:1</li>
+          <li>2025년 3Q 누적 매출 9,797억 원 (+105% YoY)</li>
+          <li>영업이익 2,352억 원 (+183%), 영업이익률 24%↑</li>
+          <li>2025.8 아모레퍼시픽 제치고 K-뷰티 시총 1위</li>
+          <li>수출 매출 비중 77%, 미국·일본 폭발적 성장</li>
+        </ul>
+      </div>
+      <div>
+        <h4>달바글로벌 (코스피, 2025.5)</h4>
+        <ul>
+          <li>공모가 66,300원, 상장 첫날 +66% 급등</li>
+          <li>2025년 3Q 누적 매출 3,595억 원 (+68% YoY)</li>
+          <li>영업이익률 21%, 시가총액 1.5조 원↑</li>
+          <li>일본 Qoo10·라쿠텐, 미국 아마존 매출 증가</li>
+          <li>화이트 트러플 기반 프리미엄 비건 포지셔닝</li>
+        </ul>
+      </div>
+    </div>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+  </div>
+
+  <div class="card">
+    <h3>코스닥 상장 요건 핵심 정리 (2025.01.01 기준)</h3>
+    <table style="margin-top:10px">
+      <thead><tr><th>구분</th><th>일반기업 (수익성 기준 예시)</th><th>기술성장기업 특례</th></tr></thead>
+      <tbody>
+        <tr><td>주식분산</td><td colspan="2">소액주주 500명 & 25%↑, 또는 공모 25%↑ 등 (택일)</td></tr>
+        <tr><td>경영성과</td><td>법인세차감전이익 20억↑ & 시가총액 90억↑ 등 (택일)</td><td>자기자본 10억↑ 또는 시가총액 90억↑</td></tr>
+        <tr><td>기술평가</td><td>해당 없음</td><td>전문기관 A & BBB 등급 이상</td></tr>
+        <tr><td>감사의견</td><td colspan="2">최근 사업연도 적정</td></tr>
+      </tbody>
+    </table>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 한국거래소</p>
+  </div>
+
+  <div class="chapter-title">해외진출 시 주요 재무적 고려사항</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>항목</th><th>주요 내용</th></tr></thead>
+      <tbody>
+        <tr><td><strong>플랫폼 비용<br>(아마존)</strong></td><td>화장품·건강용품 판매 수수료 8~15%, FBA(주문처리) 수수료 별도. 광고·Vine 등 추가 서비스 이용 시 비용 증가.</td></tr>
+        <tr><td><strong>미국 관세</strong></td><td>2025.8.7부터 한국산 화장품에 상호관세 <strong>15%</strong> 부과 (트럼프 2기). 한미 FTA 무관세 혜택 종료. 철강·알루미늄 용기 포함 시 함량 가치에 추가 50% 관세 주의.</td></tr>
+        <tr><td><strong>결제대금 수취</strong></td><td>해외 계좌 직접 개설 또는 페이오니아·하이퍼월렛 등 가상계좌 활용. 수수료 1~3.5% 수준.</td></tr>
+        <tr><td><strong>환 위험</strong></td><td>판매 후 계좌 입금까지 통상 20일~1개월 소요. 외화 노출 기간 동안 환헤지 필수. 스타트업도 일정 수준의 헤지 전략 수립 필요.</td></tr>
+      </tbody>
+    </table>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+  </div>
+
+  <div class="chapter-title">K-뷰티 스타트업 성장전략</div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>① 특화 제품 & 브랜드 아이덴티티</h3>
+      <p>고객층 명확화 → 차별화 성분·기능으로 아이덴티티 확립. (예: 코스알엑스의 천연성분, 비바웨이브의 독특한 컬러감)</p>
+    </div>
+    <div class="card">
+      <h3>② 글로벌 시장 우선 전략</h3>
+      <p>국내 성장성이 둔화된 상황에서 북미·유럽·일본 중심의 글로벌 시장 공략. 중국 의존도 분산 필수.</p>
+    </div>
+    <div class="card">
+      <h3>③ 지속가능성 & 클린뷰티</h3>
+      <p>EU 등 규제 강화, 소비자 클린뷰티 선호 증가. 친환경 패키지·성분으로 브랜드 이미지 제고 및 충성고객 확보.</p>
+    </div>
+    <div class="card">
+      <h3>④ D2C & 디지털·뷰티테크</h3>
+      <p>SNS·인플루언서 마케팅, 라이브커머스로 직접 소통. AI 피부분석·화장품 시뮬레이션 등 뷰티테크 접목으로 충성고객 확보.</p>
+    </div>
+  </div>
+  <p class="source" style="padding:0 4px; margin-top:-10px">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+
+</div>
+
+<!-- ==================== SECTION 3 ==================== -->
+<div id="sec3" class="section">
+
+  <div class="chapter-title">K-뷰티 주요 회계 이슈</div>
+
+  <div class="issue-block">
+    <div class="issue-title">① 온라인 플랫폼 광고비용 — 매출 차감 vs. 비용 처리</div>
+    <div class="issue-body">
+      <p><span class="badge orange">핵심 쟁점</span> 화장품사가 온라인 플랫폼에 지급하는 광고비가 <strong>구별되는 수행의무(광고용역) 대가</strong>인지, <strong>고객(플랫폼)에게 지급하는 대가(매출 차감)</strong>인지 판단 필요.</p>
+      <h4 style="margin-top:12px">판단 포인트</h4>
+      <ul>
+        <li>상품공급 계약 없이도 광고 계약이 독립적으로 존재하는가?</li>
+        <li>광고는 플랫폼 내 자사 제품 판매 페이지로 연결 → 플랫폼의 매출을 위한 성격</li>
+        <li>→ 매출의 차감으로 볼 여지 있음 (K-IFRS 1115호 문단 70)</li>
+      </ul>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1115호</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">② 판매업체 설비 보상금 — 자산 vs. 매출 차감</div>
+    <div class="issue-body">
+      <p><span class="badge orange">핵심 쟁점</span> 대리점 매장 설비(인테리어·디스플레이 등) 투자비를 화장품사가 보상금으로 지급할 때 회계처리 방법.</p>
+      <ul style="margin-top:8px">
+        <li>판매업체로부터 <strong>구별되는 재화·용역을 받지 않는 경우</strong> → 향후 수익에서 차감</li>
+        <li>현재 계약과 연결된 보상금: 자산 인식 후 화장품 인도 시 수익 차감으로 상각</li>
+        <li>미래 예상 계약 관련 보상금: 자산성 판단 및 매출 차감 시기 결정에 전문가 판단 필요</li>
+      </ul>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1115호 문단 27·70</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">③ 운송용역 — 본인 vs. 대리인</div>
+    <div class="issue-body">
+      <p><span class="badge blue">구분 필요</span> 최종소비자 인도 시 수익 인식 vs. 선적(운송업체 인도) 시 수익 인식 여부에 따라 운송용역 처리 상이.</p>
+      <div class="grid-2" style="margin-top:10px">
+        <div>
+          <h4>국내 개인고객 인도</h4>
+          <p>운송은 주문처리 활동의 일환 → 배송비 포함 상품가격 전액을 수익 인식, 운송수수료는 비용.</p>
+        </div>
+        <div>
+          <h4>해외 거래처 CIF 조건</h4>
+          <p>선적 시 재화 통제 이전 → 운송은 별도 수행의무. 본인/대리인 판단에 따라 총액/순액 인식.</p>
+        </div>
+      </div>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1115호</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">④ 재고평가충당금</div>
+    <div class="issue-body">
+      <p>화장품 유통기한(통상 제조일로부터 2~3년) 및 트렌드 변화에 따른 재고 진부화 위험 高.</p>
+      <div class="grid-2" style="margin-top:10px">
+        <div>
+          <h4>장기체화 재고 평가 (예시)</h4>
+          <ul>
+            <li>6개월 이내: 정상 판매</li>
+            <li>7~24개월: 부분 진부화 → 경험률 기반 충당금</li>
+            <li>24개월 초과: 완전 진부화 → 100% 충당금</li>
+          </ul>
+        </div>
+        <div>
+          <h4>저가법 평가</h4>
+          <ul>
+            <li>제품·상품: NRV vs. 취득원가 비교</li>
+            <li>재공품·반제품: 추가 제조원가 고려 NRV 추정</li>
+            <li>원료·부재료: 현행대체원가 비교</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1002호</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">⑤ 고객충성제도 (마일리지) 회계처리</div>
+    <div class="issue-body">
+      <div class="grid-2">
+        <div>
+          <h4>구매 포인트</h4>
+          <p>제품 개별판매가 & 포인트 개별판매가 기준으로 거래가격 배분 → 사용·소멸 시 수익 인식. 시장거래가격(카드 포인트 정산율 가중평균)으로 공정가치 추정.</p>
+        </div>
+        <div>
+          <h4>비구매 포인트 (이벤트)</h4>
+          <p>대가 수취 없이 부여 → 별도 수행의무 아님. 손실부담계약 없으면 충당부채 미인식.</p>
+        </div>
+      </div>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1115호</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">⑥ M&A 시 조건부대가 & 자산손상</div>
+    <div class="issue-body">
+      <h4>조건부대가</h4>
+      <p>취득일에 공정가치로 측정. 금융부채 분류 시 이후 공정가치 변동을 당기손익으로 인식. 임직원 의무고용 조건 포함 시 <strong>사업결합 대가 vs. 근로 보상</strong> 판단 필요 (퇴사 시 수령 불가 → 보상으로 간주).</p>
+      <h4 style="margin-top:12px">자산손상</h4>
+      <p>K-뷰티는 무형자산(브랜드·영업권) 비중 高. 영업권은 <strong>매년 손상검사 필수</strong> (손상 징후 무관). 신생 브랜드 경쟁 심화, 트렌드 변동 시 손상차손 발생 가능성 주의.</p>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · K-IFRS 1103호·1036호</p>
+    </div>
+  </div>
+
+  <div class="chapter-title">K-뷰티 주요 세무 이슈</div>
+
+  <div class="issue-block">
+    <div class="issue-title">① 판촉행사비용 — 광고선전비 vs. 기업업무추진비(접대비)</div>
+    <div class="issue-body">
+      <table style="margin-top:8px">
+        <thead><tr><th>구분</th><th>광고선전비</th><th>기업업무추진비(접대비)</th></tr></thead>
+        <tbody>
+          <tr><td>지출 상대방</td><td>불특정 다수</td><td>특정인</td></tr>
+          <tr><td>지출 목적</td><td>구매의욕 자극</td><td>거래관계 원활화</td></tr>
+          <tr><td>세무처리</td><td>당연 손금</td><td>한도 내 손금</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:10px; color:#555">사전 공시 없이 특정 거래처에만 차별 지급 시 접대비 위험. 반드시 계약 및 지급기준 문서화 필요.</p>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 법인세법 제25조·제19조</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">② 거래처 반품비용 손금 인정 여부</div>
+    <div class="issue-body">
+      <p>사전약정 없이 미판매·진부화 제품을 반품 수령하고 폐기비용을 부담하는 경우, 손금 인정을 위한 3가지 요건 충족 여부 검토 필요.</p>
+      <ul style="margin-top:8px">
+        <li><strong>사업관련성:</strong> 해당 법인의 사업과 관련된 손실·비용인가?</li>
+        <li><strong>통상성:</strong> 일반적으로 인정되는 통상적 지출인가?</li>
+        <li><strong>수익관련성:</strong> 수익과 직접 관련된 것인가?</li>
+      </ul>
+      <p style="margin-top:8px; color:#555">관련 판례: 모든 거래처 대상이고 업계 상관행에 부합하면 정상 반품으로 인정 가능 (조심2024서2795, 2025.05.27).</p>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 법인세법 제19조</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">③ 테스터용 제품 — 판매부대비용 vs. 접대비</div>
+    <div class="issue-body">
+      <p>오프라인 직접 체험을 위해 판매점에 무상 제공하는 테스터 비용.</p>
+      <ul style="margin-top:8px">
+        <li>약정에 따른 비치, 상품 판매에 직접 관련된 비용 → <strong>판매부대비용(손금)</strong> 인정 가능</li>
+        <li>부가가치세: 증여되는 테스터의 대가가 주된 재화 대가에 포함된 경우 사업상 증여 아님</li>
+      </ul>
+      <p style="margin-top:8px; color:#555">관련 판례 (대법원2002두9292): 판매촉진 목적 정품 제공은 판매부대비용으로 사업상 증여 해당 없음.</p>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 부가가치세법 제10조 제5항</p>
+    </div>
+  </div>
+
+  <div class="issue-block">
+    <div class="issue-title">④ 마일리지 세무 처리</div>
+    <div class="issue-body">
+      <div class="grid-2">
+        <div>
+          <h4>법인세 — 손금 귀속시기</h4>
+          <p>마일리지 손금 귀속: 고객이 <strong>실제 사용한 날</strong>이 속하는 사업연도. 기말 충당부채로 계상한 금액 → <strong>손금불산입(유보)</strong> 처리 후 사용·소멸 시 손금산입.</p>
+        </div>
+        <div>
+          <h4>부가가치세</h4>
+          <p><strong>자기적립 마일리지</strong>로 결제받은 부분은 공급가액에서 제외(매출에누리). 단, 당초·이후 공급자 동일 확인 및 제3자 보전 없을 것 등 요건 충족 필요.</p>
+        </div>
+      </div>
+      <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf · 법인세법·부가가치세법 시행령 제61조</p>
+    </div>
+  </div>
+
+  <div class="chapter-title">내부통제 주요 이슈</div>
+  <div class="card">
+    <h3>K-뷰티 내부통제 취약 포인트</h3>
+    <table style="margin-top:12px">
+      <thead><tr><th>위험 유형</th><th>발생 사례</th><th>대응 통제</th></tr></thead>
+      <tbody>
+        <tr><td>재고 횡령</td><td>영업사원이 실제 주문보다 과다 발주 후 초과 물량 현금화. 매출장려금 명목으로 채권 제거.</td><td>주문접수·배송 지시 업무 분장. 매출할인·장려금 지급 시 실질적 승인 절차.</td></tr>
+        <tr><td>플랫폼 미정산</td><td>2024년 대형 플랫폼 판매대금 미정산 사태 (피해 1.5조↑). 이상 징후 사전 미감지.</td><td>거래처 재무상태·신용도 주기적 점검. 정산조건 변경 시 상위 승인 및 실질적 검토.</td></tr>
+        <tr><td>고객마스터 오남용</td><td>고객·단가 마스터 생성·변경 권한이 광범위하게 부여.</td><td>적격 담당자 권한 제한, 부적격 생성·변경 시스템 차단.</td></tr>
+        <tr><td>매출 cut-off</td><td>보고기간말 인접 거래 귀속 오류.</td><td>세금계산서와 기말 선적 기록 수기 대사. 차이 발생 시 즉시 조사·해결.</td></tr>
+      </tbody>
+    </table>
+    <p class="source">출처: samilpwc_k-beauty-guidebook2025.pdf</p>
+  </div>
+
+</div>
+
+<script>
+function showSection(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo(0, 0);
+  return false;
+}
+</script>
+
+</body>
+</html>
