@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Industry Analysis</title>
+    <style>
+        /* 깔끔한 스타일을 위한 기본 설정 */
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa; /* 연한 그레이 배경 */
+            color: #333;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px; /* 버튼 사이 간격 */
+        }
+
+        /* 버튼 디자인 */
+        .btn {
+            text-decoration: none;
+            color: #555;
+            background-color: #fff;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* 둥근 모서리 */
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* 마우스를 올렸을 때 효과 */
+        .btn:hover {
+            background-color: #f0f0f0;
+            border-color: #ccc;
+            transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 클릭했을 때 효과 */
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Beauty Industry Analysis Report</h1>
+
+    <div class="button-container">
+        <a href="beauty_industry_analysis.html" class="btn">
+            글로벌 뷰티 (Oxford Economics, statista report 비교)
+        </a>
+
+        <a href="kbeauty_industry_analysis.html" class="btn">
+            국내 뷰티 (삼일pwc report)
+        </a>
+    </div>
+
+</body>
+</html>
