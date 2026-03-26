@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty Industry Analysis</title>
+    <title>Beauty Industry Analysis Portal</title>
     <style>
-        /* 깔끔한 스타일을 위한 기본 설정 */
+        /* 기본 레이아웃 설정 */
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
             display: flex;
@@ -14,43 +14,60 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f8f9fa; /* 연한 그레이 배경 */
-            color: #333;
+            background-color: #fcfcfc; /* 아주 연한 배경 */
+            color: #222;
         }
 
         h1 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
+        /* 버튼 컨테이너: 세로로 나열하여 깔끔하게 배치 */
         .button-container {
             display: flex;
-            gap: 15px; /* 버튼 사이 간격 */
+            flex-direction: column;
+            gap: 12px;
+            width: 90%;
+            max-width: 450px;
         }
 
-        /* 버튼 디자인 */
+        /* 공통 버튼 스타일 */
         .btn {
             text-decoration: none;
-            color: #555;
-            background-color: #fff;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            border: 1px solid #ddd;
-            border-radius: 8px; /* 둥근 모서리 */
+            padding: 14px 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 10px;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-align: center;
+            display: block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
         }
 
-        /* 마우스를 올렸을 때 효과 */
+        /* 글로벌 자료 스타일: 네이비 배경 + 흰색 글씨 */
+        .btn-global {
+            background-color: #001f3f; /* 네이비 */
+            color: #ffffff;
+            border: 1px solid #001f3f;
+        }
+
+        /* 국내 자료 스타일: 연한 초록 배경 + 검은색 글씨 */
+        .btn-domestic {
+            background-color: #e8f5e9; /* 연한 초록 */
+            color: #1b5e20; /* 텍스트는 가독성을 위해 짙은 초록 계열 */
+            border: 1px solid #c8e6c9;
+        }
+
+        /* 마우스 호버 효과 */
         .btn:hover {
-            background-color: #f0f0f0;
-            border-color: #ccc;
-            transform: translateY(-2px); /* 살짝 떠오르는 효과 */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+            opacity: 0.9;
         }
 
-        /* 클릭했을 때 효과 */
         .btn:active {
             transform: translateY(0);
         }
@@ -58,15 +75,19 @@
 </head>
 <body>
 
-    <h1>Beauty Industry Analysis Report</h1>
+    <h1>Beauty Industry Analysis</h1>
 
     <div class="button-container">
-        <a href="beauty_industry_analysis.html" class="btn">
-            글로벌 뷰티 (Oxford Economics, statista report 비교)
+        <a href="beauty_industry_analysis.html" class="btn btn-global">
+            글로벌 뷰티 (Oxford Economics, Statista 비교)
         </a>
 
-        <a href="kbeauty_industry_analysis.html" class="btn">
-            국내 뷰티 (삼일pwc report)
+        <a href="McKinsey beauty_industry_analysis.html" class="btn btn-global">
+            글로벌 뷰티 산업 분석 (맥킨지 자료)
+        </a>
+
+        <a href="kbeauty_industry_analysis.html" class="btn btn-domestic">
+            국내 뷰티 (삼일PwC Report)
         </a>
     </div>
 
